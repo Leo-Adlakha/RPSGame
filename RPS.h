@@ -202,9 +202,9 @@ class RockPaperScissorGame {
         }
 
         ~RockPaperScissorGame() {
-            user1 = user2 = NULL ;
             delete user1 ;
             delete user2 ;
+            user1 = user2 = NULL ;
         }
 
 } ;
