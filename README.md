@@ -2,7 +2,7 @@
 
 ## Introduction and Technologies Used
 
-This codebase implements the Rock, Paper and Scissors game made by using multiple object oriented principles of C++. It is a game played between the User and the Computer. There are three moves a player in the game can make \(R\)ock, \(P\)aper and \(S\)cissors. The Results of the game will be as follows depending on both player's moves.
+This codebase implements the Rock, Paper and Scissors game made by using multiple object oriented principles of C++. It is a game played between the User and the Computer. There are three moves a player in the game can make **\(R\)** ock, **\(P\)** aper and **\(S\)** cissors. The Results of the game will be as follows depending on both player's moves.
 
 | Player 1       | Player 2       | Result         |
 |:--------------:|:--------------:|:--------------:|
@@ -30,13 +30,13 @@ All the tools and programming languages used in the code are as follows :
 
 ### Classes Used
 
-- Player - It is an abstract class which implements some of the common functions of the User and the Computer like Updating Scores, Fetching Scores and Choices. A Player has only 2 data members - Choice and Score and three pure virtual functions. The User and the Computer have seperate implemention of both, hence using runtime binding.
+- **Player** - It is an abstract class which implements some of the common functions of the User and the Computer like Updating Scores, Fetching Scores and Choices. A Player has only 2 data members - Choice and Score and three pure virtual functions. The User and the Computer have seperate implemention of both, hence using runtime binding.
 
-- User - It is a derived class of Player Class. It implements pure virtual functions of the Base Class. We ask for the user's input for the Round.
+- **User** - It is a derived class of Player Class. It implements pure virtual functions of the Base Class. We ask for the user's input for the Round.
 
-- Computer - It is a derived class of Player Class. It implements the pure virtual functions of the Base Class. We generate a random number between 0-2 inclusive and map these to 0 - Rock, 1 - Paper and 2 - Scissors.
+- **Computer** - It is a derived class of Player Class. It implements the pure virtual functions of the Base Class. We generate a random number between 0-2 inclusive and map these to 0 - Rock, 1 - Paper and 2 - Scissors.
 
-- RockPaperScissorGame - It is the main class which drives the whole game. It consists of 2 Players - user and the computer, initialized in the constructor, and also sets a seed for the random function. Apart from constructor and destructor, we have 4 important functions - playGame() which is responsible for repeating the rounds in the game untill the user quits, getRoundWinner() which implements logic to decide winner of the current round, displayScore() is used to display score of the players and getWinner() decides the winner at the end of the game and displays the result.
+- **RockPaperScissorGame** - It is the main class which drives the whole game. It consists of 2 Players - user and the computer, initialized in the constructor, and also sets a seed for the random function. Apart from constructor and destructor, we have 4 important functions - playGame() which is responsible for repeating the rounds in the game untill the user quits, getRoundWinner() which implements logic to decide winner of the current round, displayScore() is used to display score of the players and getWinner() decides the winner at the end of the game and displays the result.
 
 ### What concept used and Why ?
 
@@ -66,7 +66,7 @@ g++ -std=c++0x main.cpp -o main
 ./main
 ```
 
-User Input can be either of
+User's Input can be either of
 
 - R for Rock,
 - P for Paper or
@@ -79,4 +79,27 @@ To run test for the program, execute these commands in the terminal in the proje
 ```Bash
 g++ -std=c++0x test.cpp -lgtest  -lgtest_main -pthread -o test
 ./test
+```
+
+You will recieve an output like below.
+
+```Bash
+Running main() from /Users/leoadlakha/googletest/googletest/src/gtest_main.cc
+[==========] Running 5 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 5 tests from RPSTest
+[ RUN      ] RPSTest.DefaultConstructor
+[       OK ] RPSTest.DefaultConstructor (0 ms)
+[ RUN      ] RPSTest.RoundWinnerTestWithRock
+[       OK ] RPSTest.RoundWinnerTestWithRock (0 ms)
+[ RUN      ] RPSTest.RoundWinnerTestWithPaper
+[       OK ] RPSTest.RoundWinnerTestWithPaper (0 ms)
+[ RUN      ] RPSTest.RoundWinnerTestWithScissors
+[       OK ] RPSTest.RoundWinnerTestWithScissors (0 ms)
+[ RUN      ] RPSTest.ScoreUpdateTest
+[       OK ] RPSTest.ScoreUpdateTest (0 ms)
+[----------] 5 tests from RPSTest (0 ms total)
+[----------] Global test environment tear-down
+[==========] 5 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 5 tests.
 ```
